@@ -30,27 +30,33 @@ function showCalender(month, year, date) {
     var prevDate = daysInMonth(iyear, imonth - 1);
     var today = new Date().getDate();
 
-    // document.getElementById("month").innerHTML = months[parseInt(month)];
+    document.getElementById("month").innerHTML = months[parseInt(month)];
     
-    // if(date === undefined) {
-    //     document.getElementById("date_str").innerHTML = weeks[new Date().getDay()];
-    // }
-    // else {
-    //     var m;
-    //     if(parseInt(month) == 0 || parseInt(month) == 1) {
-    //         m = 11 + parseInt(month);
-    //     } else {
-    //         m = parseInt(month) - 1;
-    //     }
-    //     console.log(m);
-    //     var first = year.charAt(0) + year.charAt(1);
-    //     var last = year.charAt(year.length -1) + year.charAt(year.length - 2);
-
-    //     var day = parseInt(date) + (((13 * m) - 1) / 5) + parseInt(last) + (parseInt(last) / 4) + (parseInt(first) / 4) - (2 * parseInt(first));
-    //     console.log(parseInt(day));
-    //     day = parseInt(day) % 7;
-    //     document.getElementById("date_str").innerHTML = weeks[day];
-    // }
+    if(date === undefined) {
+        document.getElementById("date_str").innerHTML = `${weeks[new Date().getDay()]}` + " " + `${today}` + " " + `${iyear}`;
+    }
+    else {
+        var m;
+        var y;
+        if(imonth == 0 || imonth == 1) {
+            m = 11 + imonth;
+            y = iyear - 1;
+        } else {
+            m = imonth - 1;
+            y = iyear;
+        }
+        y = String(y);
+        var first = y.charAt(0) + y.charAt(1);
+        var last = y.charAt(y.length -2) + y.charAt(y.length - 1);
+        var day = parseInt(parseInt(date) + (parseInt((13 * m) - 1) / 5)) ;
+        var day1 = parseInt(last) + parseInt(parseInt(last) / 4) + parseInt(parseInt(first) / 4)  - (2 * parseInt(first));
+        var day3 = day + day1;
+        day3 = parseInt(day3) % 7;
+        if(day3 < 0) {
+            day3 = day3 + 7;
+        }
+        document.getElementById("date_str").innerHTML = `${weeks[day3]}` + " " + `${date}` + " " + `${iyear}`;
+    }
 
     //---option for months---
     var option = "";
