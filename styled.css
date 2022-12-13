@@ -10,6 +10,8 @@ body {
 
 .wrapper {
     display: flex;
+    /* justify-content: center;
+    align-items: center; */
     width: 100vw;
     height: 100vh;
     background-color: #dfe6e9;
@@ -17,9 +19,10 @@ body {
 
 .calender {
     margin: auto;
-    width: 37.5rem;
+    width: 600px;
+    /* height: 400px; */
     background-color: #fff;
-    box-shadow: 0rem 0rem 0.9375rem 0.1875rem  rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.2);
 }
 
 .month {
@@ -30,27 +33,26 @@ body {
     text-align: center;
     background-color: #2ecc71;
     color: #fff;
-    padding: 2.5rem 1.875rem; 
+    padding: 40px 30px; 
 }
 
 .weekends {
     display: flex;
     background-color: #27ae60; 
     color: #fff;
-    padding: 0.4375rem 0rem;
-    font-weight: 700;
+    padding: 7px 0;
 }
 
 .days {
     display: flex;
     flex-wrap: wrap;
     font-weight: 700;
-    padding:  0.625rem 0;
+    padding:  10px 0;
 }
 
 .days div {
-    margin-bottom: 0.625rem;
-    padding: 0.625rem 0;
+    margin-bottom: 10px;
+    padding: 10px 0;
     transition: all 0.4s;
 }
 
@@ -72,25 +74,24 @@ body {
 
 .prev_date {
     color: #999;
-    font-weight: 700;
 }
 
 #month {
-    font-size: 1.875rem;
+    font-size: 30px;
     font-weight: 700;
 }
 
 #date_str {
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 700;
-} 
+}
 
 .prev,
 .next {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.4375rem;
+    font-size: 23px;
     width: 10rem;
     height: 3rem;
     background-color: rgba(0, 0, 0, 0.1);
@@ -114,7 +115,7 @@ body {
     width: 8rem;
     height: 2rem;
     border: none;
-    box-shadow: 0rem 0rem 0.9375rem 0.1875rem rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.3);
     text-align: center;
     font-weight: 700;
 }
@@ -128,7 +129,7 @@ body {
     font-weight: 700;
     color: #fff;
     background-color: #2ecc71;
-    box-shadow: 0rem 0rem 0.9375rem 0.1875rem rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.3);
     cursor: pointer;
 }
 
