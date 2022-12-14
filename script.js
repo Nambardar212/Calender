@@ -62,13 +62,7 @@ function showCalender(month, year, date) {
     var option = "";
     option += `<option value='null' selected>Select Month</option>`;
     for(let i = 0; i < 12; i++) {
-        if(i == imonth) {
             option += `<option value=${i}>${months[i]}</option>`;
-        }
-        else {
-            option += `<option value=${i}>${months[i]}</option>`;
-        }
-        
     }
     document.getElementsByClassName("prev")[0].innerHTML = option;
 
@@ -112,9 +106,20 @@ const btn = document.querySelector(".btn");
 
 btn.addEventListener('click', setValues);
 
-//---toggle classes for specific date---
+//---toggle classes for specific date and select specific month  and year---
 function toggleClasses(date, month, year) {
     
+    for(let i = 0; i < 12; i++) {
+        if(i == month) {
+            curMonth.getElementsByTagName('option')[(i+1)].selected = 'selected';
+        }
+    }
+
+    for (var i = 0; i < curYear.options.length; ++i) {
+        if (curYear.options[i].text === year)
+            curYear.options[i].selected = true;
+    }
+
     var endDate = daysInMonth(year, month);
     for(let i = 1; i <= endDate; i++ ) {
         if(date == i) {
