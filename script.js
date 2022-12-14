@@ -82,12 +82,7 @@ function showCalender(month, year, date) {
     }
 
     for(let i = 1; i <= endDate; i++) {
-        if(i == today) {
-            cells+= `<div class='today' id='cell${i}'>${i}</div>`;
-        }
-        else {
-            cells+= `<div class='notDay' id='cell${i}'>${i}</div>`;
-        }
+        cells+= `<div class='notDay' id='cell${i}'>${i}</div>`;
     }
     document.getElementsByClassName("days")[0].innerHTML = cells; 
 }
