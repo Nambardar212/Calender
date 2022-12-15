@@ -142,7 +142,7 @@ function setValues() {
         text.innerHTML = "Please Select Year.";
         return;
     }
-    else if(date < 0 || date > 31 || date === '') {
+    else if(date < 0 || date > 31 || date === '' || date === ' ') {
         text.innerHTML = "Please Enter Valid Date.";
         return;
     } else {
